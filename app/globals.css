@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  /* Custom font imports here */
+
+  @font-face {
+    font-family: 'Freight Display Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/FreightDispProMedium-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Freight Display Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/FreightDispProBold-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Anton-Regular';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/Anton-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Helvetica Now Display Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/HelveticaNowDisplay-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Helvetica Now Display Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/HelveticaNowDisplay-Medium.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Helvetica Now Display Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/HelveticaNowDisplay-Bold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Proxima Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/ProximaBold.otf') format('opentype');
+  }
+
+}
+
+::selection {
+  background: #EB0E0E;
+  color: #ffffff;
+  /* Optional: change the text color for better readability */
+}
+
+/* For better browser support, include vendor prefixes */
+::-moz-selection {
+  background: #EB0E0E;
+  color: #ffffff;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+/* global.css or equivalent */
+::-webkit-scrollbar {
+  height: 1px;
+  width: 10px;
+  background: black;
+  /* Add a background color if needed */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #EB0E0E;
+  /* Customize the color */
+  border-radius: 10px;
+  /* Rounded corners */
+
+}
+
+body {
+  color: black;
+  background: #F3EFE7;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  font-smooth: never !important;
+  text-rendering: optimizeLegibility;
+
+}
+
+
+p {
+  font-family: 'Helvetica Now Display Medium', sans-serif;
+  font-weight: 500;
+}
+
+
+
+.scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: #EB0E0E transparent;
+}
+
+
+
+/* Embla Slider Ends Here */
+
+
+/* Custom Fonts Applied */
+.text-logo-main {
+  font-family: 'Helvetica Now Display Bold', sans-serif;
+  font-size: 20px;
+}
+
+.slider-slide {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms linear;
+  transform: scale(0.8);
+}
+
+.nav_link {
+  font-family: 'Helvetica Now Display Medium', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/*Custom font configuration*/
+
+.helvetica-medium {
+  font-family: 'Helvetica Now Display Medium', sans-serif;
+}
+
+.helvetica-regular {
+  font-family: 'Helvetica Now Display Regular', sans-serif;
+}
+
+.helvetica-bold {
+  font-family: 'Helvetica Now Display Bold', sans-serif;
+}
+
+.main-text-display-font {
+  font-family: 'Anton-Regular', sans-serif;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: white;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Ensure this is included in your global styles or the appropriate CSS file */
+
+/* Hide scrollbar for all browsers */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+/* globals.css */
+.embla__container {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .embla__slide {
+    flex: 0 0 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .embla__slide {
+    flex: 0 0 33.33%;
+  }
+}

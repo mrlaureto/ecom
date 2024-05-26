@@ -1,0 +1,20 @@
+.embla {
+    overflow: hidden;
+}
+
+.embla__container {
+    display: flex;
+    width: 100%;
+    will-change: transform;
+}
+
+.embla__slide {
+    position: relative;
+    min-width: 10%;
+    width: 33%;
+    pointer-events: none;
+}
+
+.embla__slide:hover {
+    pointer-events: auto;
+}
