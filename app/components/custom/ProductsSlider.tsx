@@ -11,6 +11,8 @@ import { Category, Product } from '@/app/types/interface';
 import { motion } from 'framer-motion';
 import LoadingSkeleton from '../skeleton/LoadingSkeleton';
 import 'tailwindcss/tailwind.css';
+import Image from 'next/image';
+
 
 interface ProductsSliderProps {
   categories: Category[];
@@ -105,10 +107,10 @@ const ProductsSlider: React.FC<ProductsSliderProps> = ({ categories, products })
                   <div className='flex flex-row justify-between w-full items-center'>
                     <h2 className="tracking-tight helvetica-bold font-[700] text-[32px] text-[#333333]">{product.product_title}</h2>
                   </div>
-                  <h4 className='helvetica-medium text-[18px] text-[#383838a2] font-[500]'>The stuff you're born for.</h4>
+                  <h4 className='helvetica-medium text-[18px] text-[#383838a2] font-[500]'>The stuff you&#39;re born for.</h4>
                 </div>
               </div>
-              <img src={product.image_background} alt={product.product_title} className="w-full h-[200px] md:h-[400px] object-contain rounded-md" />
+              <Image src={product.image_background} alt={product.product_title} width={500} height={400} className="w-full h-[200px] md:h-[400px] object-contain rounded-md" />
               <div className='w-full flex flex-row justify-between items-center'>
                 <p className='helvetica-bold uppercase text-[18px] text-[#4d473deb] hover:text-[#FF0000] cursor-pointer' onClick={() => handleAddToCart(product)}>Add to cart</p>
                 <p className="helvetica-bold text-[18px] font-[600] rounded-full text-[#4d473deb]">${product.price}</p>
