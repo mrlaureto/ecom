@@ -4,7 +4,7 @@ const nextConfig = {
     scrollRestoration: false,
   },
   images: {
-    domains: ['res.cloudinary.com'], // Add all necessary external domains here
+    domains: ['res.cloudinary.com'] // Add all necessary external domains here
   },
 };
 

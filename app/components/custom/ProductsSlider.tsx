@@ -5,11 +5,9 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '@/app/redux/store';
 import { addItemToDbAndStore, loadCart } from '@/app/redux/cartSlice';
-import { useUser } from '@clerk/nextjs';
 import { Category, Product } from '@/app/types/interface';
 import { motion } from 'framer-motion';
 import LoadingSkeleton from '../skeleton/LoadingSkeleton';
-import 'tailwindcss/tailwind.css';
 
 interface ProductsSliderProps {
   categories: Category[];
@@ -26,10 +24,9 @@ const cardVariants = {
   }
 };
 
+
 const ProductsSlider: React.FC<ProductsSliderProps> = ({ categories, products }) => {
   const dispatch = useDispatch<AppDispatch>();
-  const { user, isSignedIn } = useUser();
-  const cartItemsCount = useSelector((state: RootState) => state.cart.items.length);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [emblaRef] = useEmblaCarousel({ align: 'start' });
   const [isLoading, setIsLoading] = useState(true);

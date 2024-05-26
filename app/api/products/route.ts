@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import clientPromise from '../../../lib/mongodb';
 
-export async function getProducts() {
+// Helper function to fetch products
+async function getProducts() {
   try {
     console.log('Connecting to MongoDB...');
     const client = await clientPromise;
@@ -18,6 +19,7 @@ export async function getProducts() {
   }
 }
 
+// GET method handler
 export async function GET(request: NextRequest) {
   try {
     console.log('Handling GET request');

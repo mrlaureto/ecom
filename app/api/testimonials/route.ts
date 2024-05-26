@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import clientPromise from '../../../lib/mongodb';
 
-export async function getTestimonials() {
+// Helper function to fetch testimonials
+async function getTestimonials() {
   try {
     console.log('Connecting to MongoDB...');
     const client = await clientPromise;
@@ -13,16 +14,17 @@ export async function getTestimonials() {
     
     return testimonials;
   } catch (error) {
-    console.error('Error in gettestimonials:', error);
+    console.error('Error in getTestimonials:', error);
     throw error;
   }
 }
 
+// GET method handler
 export async function GET(request: NextRequest) {
   try {
     console.log('Handling GET request');
-const testimonials = await getTestimonials();
-    console.log('testimonials fetched successfully');
+    const testimonials = await getTestimonials();
+    console.log('Testimonials fetched successfully');
     return NextResponse.json(testimonials);
   } catch (error) {
     console.error('Error in GET handler:', error);
